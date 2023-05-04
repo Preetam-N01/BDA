@@ -1,0 +1,338 @@
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ sudo snap install eclipse --classic
+[sudo] password for hadoop: 
+eclipse 2022-12 from Snapcrafters installed
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as hadoop in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+localhost: namenode is running as process 3101.  Stop it first and ensure /tmp/hadoop-hadoop-namenode.pid file is empty before retry.
+Starting datanodes
+localhost: datanode is running as process 3247.  Stop it first and ensure /tmp/hadoop-hadoop-datanode.pid file is empty before retry.
+Starting secondary namenodes [bmscecse-HP-Elite-Tower-600-G9-Desktop-PC]
+bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: secondarynamenode is running as process 3498.  Stop it first and ensure /tmp/hadoop-hadoop-secondarynamenode.pid file is empty before retry.
+Starting resourcemanager
+resourcemanager is running as process 3963.  Stop it first and ensure /tmp/hadoop-hadoop-resourcemanager.pid file is empty before retry.
+Starting nodemanagers
+localhost: nodemanager is running as process 4107.  Stop it first and ensure /tmp/hadoop-hadoop-nodemanager.pid file is empty before retry.
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ ls
+Desktop            file1.txt            hadoopdata          Public
+Documents          file2.txt            hadoop.txt          snap
+Downloads          fle2.txt             hs_err_pid8118.log  Templates
+eclipse-workspace  hadoop               Music               Videos
+file1.sh           hadoop-3.3.4.tar.gz  Pictures
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ cd hadoop 
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ ls
+bin  include  libexec         licenses-binary  logs           NOTICE.txt  sbin
+etc  lib      LICENSE-binary  LICENSE.txt      NOTICE-binary  README.txt  share
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ cd ..
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ cd hadoop 
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ ls
+bin  include  libexec         licenses-binary  logs           NOTICE.txt  sbin
+etc  lib      LICENSE-binary  LICENSE.txt      NOTICE-binary  README.txt  share
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ etc
+Command 'etc' not found, did you mean:
+  command 'dtc' from snap device-tree-compiler (1.6.1)
+  command 'tc' from deb iproute2 (5.15.0-1ubuntu2)
+  command 'etm' from deb etm (3.2.30-1.1)
+  command 'htc' from deb httptunnel (3.3+dfsg-4)
+  command 'etw' from deb etw (3.6+svn162-6)
+  command 'rtc' from deb nvram-wakeup (1.1-4build1)
+  command 'etr' from deb extremetuxracer (0.8.1-1)
+  command 'eta' from deb eta (1.0.1-1)
+  command 'etcd' from deb etcd-server (3.3.25+dfsg-7ubuntu0.22.04.1)
+  command 'dtc' from deb device-tree-compiler (1.6.1-1)
+  command 'atc' from deb bsdgames (2.17-29)
+See 'snap info <snapname>' for additional versions.
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ cat etc
+cat: etc: Is a directory
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ cd etc
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop/etc$ ls
+hadoop
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop/etc$ cat hadoop
+cat: hadoop: Is a directory
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop/etc$ cd hadoop
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop/etc/hadoop$ ls
+capacity-scheduler.xml            kms-log4j.properties
+configuration.xsl                 kms-site.xml
+container-executor.cfg            log4j.properties
+core-site.xml                     mapred-env.cmd
+hadoop-env.cmd                    mapred-env.sh
+hadoop-env.sh                     mapred-queues.xml.template
+hadoop-metrics2.properties        mapred-site.xml
+hadoop-policy.xml                 shellprofile.d
+hadoop-user-functions.sh.example  ssl-client.xml.example
+hdfs-rbf-site.xml                 ssl-server.xml.example
+hdfs-site.xml                     user_ec_policies.xml.template
+httpfs-env.sh                     workers
+httpfs-log4j.properties           yarn-env.cmd
+httpfs-site.xml                   yarn-env.sh
+kms-acls.xml                      yarnservice-log4j.properties
+kms-env.sh                        yarn-site.xml
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop/etc/hadoop$ cd ..
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop/etc$ cd ..
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~/hadoop$ cd ..
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ gedit sample.txt
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ cat sample.txt
+We use hadoop keyword to invoke the hadoop script.
+The benefits of using jar here are: The jar required to run the code which are present in Hadoop lib directory are bundled together in the jar file. The configuration files which are required for the MR code execution are also bundled here in the jar file.
+So, while using jar all of this things are bundled together and are execution ready. But using class if you are executing the jar you have to add all the required jars & configuration files separately.
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -ls /
+Found 3 items
+drwxr-xr-x   - hadoop supergroup          0 2023-04-27 12:49 /Hadoop
+drwxr-xr-x   - hadoop supergroup          0 2023-04-27 12:44 /hadoop
+drwxr-xr-x   - hadoop supergroup          0 2023-04-27 12:20 /sample
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -mkdir /inputbda
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -ls /
+Found 4 items
+drwxr-xr-x   - hadoop supergroup          0 2023-04-27 12:49 /Hadoop
+drwxr-xr-x   - hadoop supergroup          0 2023-04-27 12:44 /hadoop
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 12:56 /inputbda
+drwxr-xr-x   - hadoop supergroup          0 2023-04-27 12:20 /sample
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ ls
+Desktop            file1.txt            hadoopdata          Public
+Documents          file2.txt            hadoop.txt          sample.txt
+Downloads          fle2.txt             hs_err_pid8118.log  snap
+eclipse-workspace  hadoop               Music               Templates
+file1.sh           hadoop-3.3.4.tar.gz  Pictures            Videos
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ pwd sample.txt
+/home/hadoop
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -put sample.txt /inputbda
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -ls /inputbda
+Found 1 items
+-rw-r--r--   1 hadoop supergroup        510 2023-05-04 12:59 /inputbda/sample.txt
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop jar /home/hadoop/Desktop/wordpreetam.jar WCDriver /inputbda/sample.txt /outputbda
+2023-05-04 13:01:29,546 INFO impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2023-05-04 13:01:29,580 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2023-05-04 13:01:29,580 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+2023-05-04 13:01:29,586 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2023-05-04 13:01:29,638 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2023-05-04 13:01:29,673 INFO mapred.FileInputFormat: Total input files to process : 1
+2023-05-04 13:01:29,699 INFO mapreduce.JobSubmitter: number of splits:1
+2023-05-04 13:01:29,751 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_local1660110052_0001
+2023-05-04 13:01:29,751 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2023-05-04 13:01:29,808 INFO mapreduce.Job: The url to track the job: http://localhost:8080/
+2023-05-04 13:01:29,809 INFO mapreduce.Job: Running job: job_local1660110052_0001
+2023-05-04 13:01:29,809 INFO mapred.LocalJobRunner: OutputCommitter set in config null
+2023-05-04 13:01:29,810 INFO mapred.LocalJobRunner: OutputCommitter is org.apache.hadoop.mapred.FileOutputCommitter
+2023-05-04 13:01:29,812 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2023-05-04 13:01:29,812 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2023-05-04 13:01:29,858 INFO mapred.LocalJobRunner: Waiting for map tasks
+2023-05-04 13:01:29,859 INFO mapred.LocalJobRunner: Starting task: attempt_local1660110052_0001_m_000000_0
+2023-05-04 13:01:29,868 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2023-05-04 13:01:29,868 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2023-05-04 13:01:29,873 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2023-05-04 13:01:29,884 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/inputbda/sample.txt:0+510
+2023-05-04 13:01:29,892 INFO mapred.MapTask: numReduceTasks: 1
+2023-05-04 13:01:29,919 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2023-05-04 13:01:29,919 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2023-05-04 13:01:29,919 INFO mapred.MapTask: soft limit at 83886080
+2023-05-04 13:01:29,919 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2023-05-04 13:01:29,919 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2023-05-04 13:01:29,920 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2023-05-04 13:01:29,969 INFO mapred.LocalJobRunner: 
+2023-05-04 13:01:29,969 INFO mapred.MapTask: Starting flush of map output
+2023-05-04 13:01:29,969 INFO mapred.MapTask: Spilling map output
+2023-05-04 13:01:29,969 INFO mapred.MapTask: bufstart = 0; bufend = 878; bufvoid = 104857600
+2023-05-04 13:01:29,969 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214032(104856128); length = 365/6553600
+2023-05-04 13:01:29,972 INFO mapred.MapTask: Finished spill 0
+2023-05-04 13:01:29,976 INFO mapred.Task: Task:attempt_local1660110052_0001_m_000000_0 is done. And is in the process of committing
+2023-05-04 13:01:29,978 INFO mapred.LocalJobRunner: hdfs://localhost:9000/inputbda/sample.txt:0+510
+2023-05-04 13:01:29,978 INFO mapred.Task: Task 'attempt_local1660110052_0001_m_000000_0' done.
+2023-05-04 13:01:29,980 INFO mapred.Task: Final Counters for attempt_local1660110052_0001_m_000000_0: Counters: 23
+	File System Counters
+		FILE: Number of bytes read=4173
+		FILE: Number of bytes written=645777
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=510
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=5
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=3
+		Map output records=92
+		Map output bytes=878
+		Map output materialized bytes=1068
+		Input split bytes=93
+		Combine input records=0
+		Spilled Records=92
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=526385152
+	File Input Format Counters 
+		Bytes Read=510
+2023-05-04 13:01:29,980 INFO mapred.LocalJobRunner: Finishing task: attempt_local1660110052_0001_m_000000_0
+2023-05-04 13:01:29,981 INFO mapred.LocalJobRunner: map task executor complete.
+2023-05-04 13:01:29,982 INFO mapred.LocalJobRunner: Waiting for reduce tasks
+2023-05-04 13:01:29,982 INFO mapred.LocalJobRunner: Starting task: attempt_local1660110052_0001_r_000000_0
+2023-05-04 13:01:29,985 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2023-05-04 13:01:29,985 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2023-05-04 13:01:29,985 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2023-05-04 13:01:29,986 INFO mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@21314881
+2023-05-04 13:01:29,987 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2023-05-04 13:01:29,993 INFO reduce.MergeManagerImpl: MergerManager: memoryLimit=5832389120, maxSingleShuffleLimit=1458097280, mergeThreshold=3849377024, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2023-05-04 13:01:29,994 INFO reduce.EventFetcher: attempt_local1660110052_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2023-05-04 13:01:30,005 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1660110052_0001_m_000000_0 decomp: 1064 len: 1068 to MEMORY
+2023-05-04 13:01:30,007 INFO reduce.InMemoryMapOutput: Read 1064 bytes from map-output for attempt_local1660110052_0001_m_000000_0
+2023-05-04 13:01:30,007 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1064, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->1064
+2023-05-04 13:01:30,008 INFO reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2023-05-04 13:01:30,008 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2023-05-04 13:01:30,008 INFO reduce.MergeManagerImpl: finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+2023-05-04 13:01:30,010 INFO mapred.Merger: Merging 1 sorted segments
+2023-05-04 13:01:30,010 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 1060 bytes
+2023-05-04 13:01:30,011 INFO reduce.MergeManagerImpl: Merged 1 segments, 1064 bytes to disk to satisfy reduce memory limit
+2023-05-04 13:01:30,011 INFO reduce.MergeManagerImpl: Merging 1 files, 1068 bytes from disk
+2023-05-04 13:01:30,011 INFO reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2023-05-04 13:01:30,011 INFO mapred.Merger: Merging 1 sorted segments
+2023-05-04 13:01:30,012 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 1060 bytes
+2023-05-04 13:01:30,012 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2023-05-04 13:01:30,084 INFO mapred.Task: Task:attempt_local1660110052_0001_r_000000_0 is done. And is in the process of committing
+2023-05-04 13:01:30,085 INFO mapred.LocalJobRunner: 1 / 1 copied.
+2023-05-04 13:01:30,085 INFO mapred.Task: Task attempt_local1660110052_0001_r_000000_0 is allowed to commit now
+2023-05-04 13:01:30,100 INFO output.FileOutputCommitter: Saved output of task 'attempt_local1660110052_0001_r_000000_0' to hdfs://localhost:9000/outputbda
+2023-05-04 13:01:30,101 INFO mapred.LocalJobRunner: reduce > reduce
+2023-05-04 13:01:30,101 INFO mapred.Task: Task 'attempt_local1660110052_0001_r_000000_0' done.
+2023-05-04 13:01:30,101 INFO mapred.Task: Final Counters for attempt_local1660110052_0001_r_000000_0: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=6341
+		FILE: Number of bytes written=646845
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=510
+		HDFS: Number of bytes written=399
+		HDFS: Number of read operations=10
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=3
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=51
+		Reduce shuffle bytes=1068
+		Reduce input records=92
+		Reduce output records=51
+		Spilled Records=92
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=526385152
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=399
+2023-05-04 13:01:30,101 INFO mapred.LocalJobRunner: Finishing task: attempt_local1660110052_0001_r_000000_0
+2023-05-04 13:01:30,101 INFO mapred.LocalJobRunner: reduce task executor complete.
+2023-05-04 13:01:30,811 INFO mapreduce.Job: Job job_local1660110052_0001 running in uber mode : false
+2023-05-04 13:01:30,813 INFO mapreduce.Job:  map 100% reduce 100%
+2023-05-04 13:01:30,814 INFO mapreduce.Job: Job job_local1660110052_0001 completed successfully
+2023-05-04 13:01:30,827 INFO mapreduce.Job: Counters: 36
+	File System Counters
+		FILE: Number of bytes read=10514
+		FILE: Number of bytes written=1292622
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=1020
+		HDFS: Number of bytes written=399
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+		HDFS: Number of bytes read erasure-coded=0
+	Map-Reduce Framework
+		Map input records=3
+		Map output records=92
+		Map output bytes=878
+		Map output materialized bytes=1068
+		Input split bytes=93
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=51
+		Reduce shuffle bytes=1068
+		Reduce input records=92
+		Reduce output records=51
+		Spilled Records=184
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1052770304
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=510
+	File Output Format Counters 
+		Bytes Written=399
+0
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -ls /outputbda
+Found 2 items
+-rw-r--r--   1 hadoop supergroup          0 2023-05-04 13:01 /outputbda/_SUCCESS
+-rw-r--r--   1 hadoop supergroup        399 2023-05-04 13:01 /outputbda/part-00000
+hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC:~$ hadoop fs -cat /outputbda/part-00000
+&	1
+But	1
+Hadoop	1
+MR	1
+So,	1
+The	3
+We	1
+add	1
+all	2
+also	1
+and	1
+are	7
+are:	1
+benefits	1
+bundled	3
+class	1
+code	2
+configuration	2
+directory	1
+executing	1
+execution	2
+file.	2
+files	2
+for	1
+hadoop	2
+have	1
+here	2
+if	1
+in	3
+invoke	1
+jar	6
+jars	1
+keyword	1
+lib	1
+of	2
+present	1
+ready.	1
+required	3
+run	1
+script.	1
+separately.	1
+the	7
+things	1
+this	1
+to	3
+together	2
+use	1
+using	3
+which	2
+while	1
+you	2
